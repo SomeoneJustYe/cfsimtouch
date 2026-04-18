@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Folio & Ink — Bookstore</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+ 
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav__logo">Folio <span>&</span> Ink</div>
+    <ul class="nav__links">
+      <li><a href="#" data-filter="all" class="active">All</a></li>
+      <li><a href="#" data-filter="fiction">Fiction</a></li>
+      <li><a href="#" data-filter="non-fiction">Non-Fiction</a></li>
+      <li><a href="#" data-filter="romance">Romance</a></li>
+      <li><a href="#" data-filter="sci-fi">Sci-Fi</a></li>
+    </ul>
+    <button class="nav__cart" id="cartBtn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <span class="cart__count" id="cartCount">0</span>
+    </button>
+  </nav>
+ 
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero__text">
+      <p class="hero__sub">New arrivals, curated weekly</p>
+      <h1 class="hero__title">Stories that<br/><em>move you.</em></h1>
+      <p class="hero__desc">A quiet corner of the internet for readers who believe a good book changes everything.</p>
+      <button class="btn btn--primary" onclick="document.getElementById('books').scrollIntoView({behavior:'smooth'})">Browse Books</button>
+    </div>
+    <div class="hero__deco">
+      <div class="deco__ring"></div>
+      <div class="deco__book">
+        <div class="book-3d">
+          <div class="book-3d__spine"></div>
+          <div class="book-3d__cover">
+            <p>FOLIO</p>
+            <p class="book-3d__amp">&amp;</p>
+            <p>INK</p>
+          </div>
+          <div class="book-3d__pages"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+ 
+  <!-- SEARCH -->
+  <section class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search by title or author…" />
+  </section>
+ 
+  <!-- BOOKS GRID -->
+  <main class="books" id="books">
+    <h2 class="section-title">Our Collection</h2>
+    <div class="books__grid" id="booksGrid"></div>
+  </main>
+ 
+  <!-- CART DRAWER -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer__header">
+      <h3>Your Bag</h3>
+      <button id="closeCart">✕</button>
+    </div>
+    <div class="cart-drawer__items" id="cartItems">
+      <p class="cart-empty">Your bag is empty.</p>
+    </div>
+    <div class="cart-drawer__footer">
+      <div class="cart-total">Total: <strong id="cartTotal">$0.00</strong></div>
+      <button class="btn btn--primary" style="width:100%">Checkout</button>
+    </div>
+  </aside>
+ 
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+ 
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 Folio & Ink. Made for readers, by readers.</p>
+  </footer>
+ 
+  <script src="index.js"></script>
+</body>
+</html>
+ 
